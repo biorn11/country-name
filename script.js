@@ -1,6 +1,3 @@
- import { create } from 'domain'
-import fs from 'fs'
-
 import fsp from 'fs/promises'
 
 
@@ -14,12 +11,12 @@ import fsp from 'fs/promises'
   let fileArray=file.split('\n')
    async function createFiles(file){
 console.log(file)
-file.forEach(element => {
+for (let elements of file) {
   //console.log(element)
-const seperatedCountriesArray=element.split(',')
+const seperatedCountriesArray=elements.split(',')
 const  [country,word]=seperatedCountriesArray;
     await filesCreated(country,word)
-});
+};
   }
   async function filesCreated(file1,file2,){
     return fsp.writeFile(file1,file2,err=>{
