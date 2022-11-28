@@ -22,7 +22,7 @@ const  [country,word]=seperatedCountriesArray;
 });
   }
   async function filesCreated(file1,file2,){
-    return fsp.createFile(file1,file2,err=>{
+    return fsp.writeFile(file1,file2,err=>{
       if (err){
         console.log (err)
       }
